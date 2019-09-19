@@ -3,6 +3,7 @@ const app = express()
 const fetch = require('node-fetch');
 
 let cachedData;
+const port = 9909;
 
 app.get('/', function (req, res) {
 
@@ -46,7 +47,7 @@ function getPSI() {
                     // console.log(Chart1HRPM25)
                     const curr25 = Chart1HRPM25[Chart1HRPM25.length - 1];
                     const currPSI = ChartPM25[ChartPM25.length - 1];
-                    console.log(now, currPSI, curr25)
+                    console.log(port, now, currPSI, curr25)
                     cachedData = data;
                 });
             }
@@ -57,4 +58,4 @@ function getPSI() {
 }
 
 
-app.listen(3000)
+app.listen(port);
