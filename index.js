@@ -1,9 +1,12 @@
 const express = require('express')
 const app = express()
 const fetch = require('node-fetch');
+var cors = require('cors')
 
 let cachedData;
 const port = 9909;
+
+app.use(cors());
 
 app.get('/', function (req, res) {
 
